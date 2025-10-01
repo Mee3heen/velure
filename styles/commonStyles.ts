@@ -2,7 +2,7 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
 export const colors = {
-  primary: '#E91E63',      // Pink for cosmetics
+  primary: '#DC143C',      // Crimson red to match the logo's red dot
   secondary: '#F8BBD9',    // Light pink
   accent: '#4CAF50',       // Green for natural/organic feel
   background: '#FFFFFF',   // White background

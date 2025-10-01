@@ -32,14 +32,6 @@ export default function CatalogScreen() {
         resizeMode="contain"
       />
       
-      <Text style={styles.companyName}>VELURE</Text>
-      
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.description}>
-          Компания Velure — ведущий дистрибьютор косметологических препаратов для профессионалов индустрии красоты, предлагающий широкий ассортимент продукции из России, США, Европы и Кореи, включая инновационные бренды Biogel, AGT и Jufora. Мы осуществляем поставки по всей России и за рубеж, а также регулярно организуем обучающие семинары по применению препаратов для специалистов.
-        </Text>
-      </View>
-      
       <CategoryFilter
         categories={categories}
         selectedCategory={selectedCategory}
@@ -73,27 +65,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   logo: {
-    width: 200,
-    height: 80,
-    marginBottom: 10,
-  },
-  companyName: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 20,
-    letterSpacing: 2,
-  },
-  descriptionContainer: {
-    backgroundColor: colors.backgroundAlt,
-    borderRadius: 12,
-    padding: 20,
+    width: 300,
+    height: 120,
     marginBottom: 30,
-  },
-  description: {
-    fontSize: 16,
-    color: colors.text,
-    lineHeight: 24,
-    textAlign: 'center',
   },
 });

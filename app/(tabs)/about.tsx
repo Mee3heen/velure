@@ -13,12 +13,12 @@ export default function AboutScreen() {
 
   const handleEmail = () => {
     console.log('Opening email client');
-    Linking.openURL('mailto:info@cosmetica.ru');
+    Linking.openURL('mailto:info@velure.ru');
   };
 
   const handleWebsite = () => {
     console.log('Opening website');
-    Linking.openURL('https://cosmetica.ru');
+    Linking.openURL('https://velure.ru');
   };
 
   return (
@@ -27,11 +27,9 @@ export default function AboutScreen() {
         <Text style={commonStyles.title}>О компании</Text>
         
         <View style={commonStyles.card}>
-          <Text style={commonStyles.subtitle}>Cosmetica Professional</Text>
+          <Text style={commonStyles.subtitle}>VELURE</Text>
           <Text style={commonStyles.text}>
-            Мы специализируемся на продаже профессиональных косметологических средств 
-            высочайшего качества. Наша продукция разработана ведущими специалистами 
-            в области дерматологии и косметологии.
+            Компания Velure — ведущий дистрибьютор косметологических препаратов для профессионалов индустрии красоты, предлагающий широкий ассортимент продукции из России, США, Европы и Кореи, включая инновационные бренды Biogel, AGT и Jufora. Мы осуществляем поставки по всей России и за рубеж, а также регулярно организуем обучающие семинары по применению препаратов для специалистов.
           </Text>
         </View>
 
@@ -39,9 +37,10 @@ export default function AboutScreen() {
           <Text style={styles.sectionTitle}>Наши преимущества</Text>
           <Text style={styles.bulletPoint}>• Только сертифицированная продукция</Text>
           <Text style={styles.bulletPoint}>• Консультации специалистов</Text>
-          <Text style={styles.bulletPoint}>• Быстрая доставка по всей России</Text>
+          <Text style={styles.bulletPoint}>• Быстрая доставка по всей России и за рубеж</Text>
           <Text style={styles.bulletPoint}>• Гарантия качества</Text>
-          <Text style={styles.bulletPoint}>• Индивидуальный подход к каждому клиенту</Text>
+          <Text style={styles.bulletPoint}>• Обучающие семинары для специалистов</Text>
+          <Text style={styles.bulletPoint}>• Инновационные бренды Biogel, AGT и Jufora</Text>
         </View>
 
         <View style={commonStyles.card}>
@@ -49,8 +48,8 @@ export default function AboutScreen() {
           <Text style={commonStyles.text}>
             📍 Москва, ул. Красная Площадь, д. 1{'\n'}
             📞 +7 (900) 123-45-67{'\n'}
-            📧 info@cosmetica.ru{'\n'}
-            🌐 www.cosmetica.ru
+            📧 info@velure.ru{'\n'}
+            🌐 www.velure.ru
           </Text>
           
           <View style={styles.buttonContainer}>

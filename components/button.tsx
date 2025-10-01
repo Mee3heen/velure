@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   ActivityIndicator,
@@ -8,7 +9,8 @@ import {
   useColorScheme,
   ViewStyle,
 } from "react-native";
-import { appleBlue, zincColors } from "@/constants/Colors";
+import { colors } from "@/styles/commonStyles";
+import { zincColors } from "@/constants/Colors";
 
 type ButtonVariant = "filled" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
@@ -58,14 +60,14 @@ export const Button: React.FC<ButtonProps> = ({
       case "filled":
         return {
           ...baseStyle,
-          backgroundColor: isDark ? zincColors[50] : zincColors[900],
+          backgroundColor: colors.primary, // Use the red color from commonStyles
         };
       case "outline":
         return {
           ...baseStyle,
           backgroundColor: "transparent",
           borderWidth: 1,
-          borderColor: isDark ? zincColors[700] : zincColors[300],
+          borderColor: colors.primary, // Use the red color for border
         };
       case "ghost":
         return {
@@ -82,10 +84,10 @@ export const Button: React.FC<ButtonProps> = ({
 
     switch (variant) {
       case "filled":
-        return isDark ? zincColors[900] : zincColors[50];
+        return colors.background; // White text on red background
       case "outline":
       case "ghost":
-        return appleBlue;
+        return colors.primary; // Red text
     }
   };
 
