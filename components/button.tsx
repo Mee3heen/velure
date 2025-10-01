@@ -12,8 +12,8 @@ import {
 import { colors } from "@/styles/commonStyles";
 import { zincColors } from "@/constants/Colors";
 
-type ButtonVariant = "filled" | "outline" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonVariant = "primary" | "outline" | "ghost";
+type ButtonSize = "small" | "medium" | "large";
 
 interface ButtonProps {
   onPress?: () => void;
@@ -28,8 +28,8 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
-  variant = "filled",
-  size = "md",
+  variant = "primary",
+  size = "medium",
   disabled = false,
   loading = false,
   children,
@@ -43,9 +43,9 @@ export const Button: React.FC<ButtonProps> = ({
     ButtonSize,
     { height: number; fontSize: number; padding: number }
   > = {
-    sm: { height: 36, fontSize: 14, padding: 12 },
-    md: { height: 44, fontSize: 16, padding: 16 },
-    lg: { height: 55, fontSize: 18, padding: 20 },
+    small: { height: 36, fontSize: 14, padding: 12 },
+    medium: { height: 44, fontSize: 16, padding: 16 },
+    large: { height: 55, fontSize: 18, padding: 20 },
   };
 
   const getVariantStyle = () => {
@@ -57,7 +57,7 @@ export const Button: React.FC<ButtonProps> = ({
     };
 
     switch (variant) {
-      case "filled":
+      case "primary":
         return {
           ...baseStyle,
           backgroundColor: colors.primary, // Use the red color from commonStyles
@@ -83,7 +83,7 @@ export const Button: React.FC<ButtonProps> = ({
     }
 
     switch (variant) {
-      case "filled":
+      case "primary":
         return colors.background; // White text on red background
       case "outline":
       case "ghost":

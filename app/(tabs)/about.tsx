@@ -55,13 +55,28 @@ export default function AboutScreen() {
           </Text>
           
           <View style={styles.buttonContainer}>
-            <Button onPress={handleCall} style={styles.contactButton}>
+            <Button 
+              variant="primary" 
+              size="medium"
+              onPress={handleCall} 
+              style={styles.contactButton}
+            >
               Позвонить
             </Button>
-            <Button onPress={handleEmail} style={styles.contactButton}>
+            <Button 
+              variant="primary" 
+              size="medium"
+              onPress={handleEmail} 
+              style={styles.contactButton}
+            >
               Написать
             </Button>
-            <Button onPress={handleWebsite} style={styles.contactButton}>
+            <Button 
+              variant="primary" 
+              size="medium"
+              onPress={handleWebsite} 
+              style={styles.contactButton}
+            >
               Сайт
             </Button>
           </View>
@@ -108,6 +123,5 @@ const styles = StyleSheet.create({
   contactButton: {
     flex: 1,
     marginHorizontal: 4,
-    backgroundColor: colors.primary,
   },
 });

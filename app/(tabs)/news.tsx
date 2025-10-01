@@ -71,7 +71,10 @@ const newsAndSeminars: NewsItem[] = [
 ];
 
 export default function NewsScreen() {
+  console.log('NewsScreen component rendered');
+
   const handleLinkPress = (link?: string) => {
+    console.log('Link pressed:', link);
     if (link) {
       Linking.openURL(link).catch(err => {
         console.log('Error opening link:', err);
@@ -79,33 +82,36 @@ export default function NewsScreen() {
     }
   };
 
-  const renderNewsItem = (item: NewsItem) => (
-    <View key={item.id} style={styles.newsItem}>
-      <Image source={{ uri: item.image }} style={styles.newsImage} />
-      <View style={styles.newsContent}>
-        <View style={styles.newsHeader}>
-          <View style={[styles.typeTag, item.type === 'seminar' ? styles.seminarTag : styles.newsTag]}>
-            <Text style={[styles.typeText, item.type === 'seminar' && styles.seminarTypeText]}>
-              {item.type === 'seminar' ? 'СЕМИНАР' : 'НОВОСТИ'}
-            </Text>
+  const renderNewsItem = (item: NewsItem) => {
+    console.log('Rendering news item:', item.id);
+    return (
+      <View key={item.id} style={styles.newsItem}>
+        <Image source={{ uri: item.image }} style={styles.newsImage} />
+        <View style={styles.newsContent}>
+          <View style={styles.newsHeader}>
+            <View style={[styles.typeTag, item.type === 'seminar' ? styles.seminarTag : styles.newsTag]}>
+              <Text style={[styles.typeText, item.type === 'seminar' && styles.seminarTypeText]}>
+                {item.type === 'seminar' ? 'СЕМИНАР' : 'НОВОСТИ'}
+              </Text>
+            </View>
+            <Text style={styles.newsDate}>{item.date}</Text>
           </View>
-          <Text style={styles.newsDate}>{item.date}</Text>
+          <Text style={styles.newsTitle}>{item.title}</Text>
+          <Text style={styles.newsDescription}>{item.description}</Text>
+          {item.link && (
+            <Button
+              variant="outline"
+              size="small"
+              onPress={() => handleLinkPress(item.link)}
+              style={styles.linkButton}
+            >
+              Подробнее
+            </Button>
+          )}
         </View>
-        <Text style={styles.newsTitle}>{item.title}</Text>
-        <Text style={styles.newsDescription}>{item.description}</Text>
-        {item.link && (
-          <Button
-            variant="outline"
-            size="small"
-            onPress={() => handleLinkPress(item.link)}
-            style={styles.linkButton}
-          >
-            Подробнее
-          </Button>
-        )}
       </View>
-    </View>
-  );
+    );
+  };
 
   return (
     <SafeAreaView style={commonStyles.wrapper}>
@@ -129,7 +135,10 @@ export default function NewsScreen() {
           </Text>
           <Button
             variant="primary"
-            onPress={() => Linking.openURL('tel:+79001234567')}
+            onPress={() => {
+              console.log('Contact button pressed');
+              Linking.openURL('tel:+79001234567');
+            }}
             style={styles.contactButton}
           >
             Связаться с нами

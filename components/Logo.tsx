@@ -28,19 +28,19 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   logo: {
-    width: 120,
-    height: 40,
+    width: 180, // Increased by 50% from 120
+    height: 60,  // Increased by 50% from 40
   },
   small: {
-    width: 80,
-    height: 26,
+    width: 120, // Increased by 50% from 80
+    height: 39,  // Increased by 50% from 26
   },
   medium: {
-    width: 120,
-    height: 40,
+    width: 180, // Increased by 50% from 120
+    height: 60,  // Increased by 50% from 40
   },
   large: {
-    width: 160,
-    height: 53,
+    width: 240, // Increased by 50% from 160
+    height: 80,  // Increased by 50% from 53
   },
 });
