@@ -18,5 +18,6 @@ export interface ContactInfo {
   name: string;
   phone: string;
   email: string;
+  address: string;
   message?: string;
 }

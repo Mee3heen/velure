@@ -25,11 +25,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }
         <Text style={styles.description} numberOfLines={3}>{product.description}</Text>
         
         <View style={styles.footer}>
-          <Text style={commonStyles.price}>{product.price.toLocaleString('ru-RU')} ₽</Text>
-          
           {product.inStock ? (
             <Pressable style={styles.addButton} onPress={handleAddToCart}>
-              <IconSymbol name="plus" size={16} color={colors.background} />
+              <Text style={styles.addButtonText}>Добавить в корзину</Text>
             </Pressable>
           ) : (
             <View style={styles.outOfStockBadge}>
@@ -71,26 +69,32 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   footer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  addButton: {
-    backgroundColor: colors.primary,
-    borderRadius: 20,
-    width: 32,
-    height: 32,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  addButton: {
+    backgroundColor: colors.primary,
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    width: '100%',
+    alignItems: 'center',
+  },
+  addButtonText: {
+    color: colors.background,
+    fontSize: 14,
+    fontWeight: '600',
+  },
   outOfStockBadge: {
     backgroundColor: colors.grey,
-    borderRadius: 12,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    width: '100%',
+    alignItems: 'center',
   },
   outOfStockText: {
-    fontSize: 12,
+    fontSize: 14,
     color: colors.textLight,
     fontWeight: '500',
   },

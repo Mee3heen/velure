@@ -14,29 +14,30 @@ export default function CheckoutScreen() {
     name: '',
     phone: '',
     email: '',
+    address: '',
     message: '',
   });
 
   const handleSubmit = async () => {
     console.log('Submitting order with contact info:', contactInfo);
     
-    if (!contactInfo.name.trim() || !contactInfo.phone.trim()) {
-      Alert.alert('Ошибка', 'Пожалуйста, заполните имя и телефон');
+    if (!contactInfo.name.trim() || !contactInfo.phone.trim() || !contactInfo.address.trim()) {
+      Alert.alert('Ошибка', 'Пожалуйста, заполните имя, телефон и адрес');
       return;
     }
 
     try {
       // Формируем сообщение для Telegram
       const orderDetails = cartItems.map(item => 
-        `${item.product.name} - ${item.quantity} шт. - ${(item.product.price * item.quantity).toLocaleString('ru-RU')} ₽`
+        `${item.product.name} - ${item.quantity} шт.`
       ).join('\n');
 
       const message = `🛍️ НОВЫЙ ЗАКАЗ\n\n` +
         `👤 Клиент: ${contactInfo.name}\n` +
         `📞 Телефон: ${contactInfo.phone}\n` +
-        `📧 Email: ${contactInfo.email || 'не указан'}\n\n` +
+        `📧 Email: ${contactInfo.email || 'не указан'}\n` +
+        `📍 Адрес: ${contactInfo.address}\n\n` +
         `📦 Заказ:\n${orderDetails}\n\n` +
-        `💰 Итого: ${getTotalPrice().toLocaleString('ru-RU')} ₽\n\n` +
         `💬 Комментарий: ${contactInfo.message || 'отсутствует'}`;
 
       // Здесь должна быть отправка в Telegram Bot API
@@ -75,15 +76,10 @@ export default function CheckoutScreen() {
             <View key={item.product.id} style={styles.orderItem}>
               <Text style={styles.itemName}>{item.product.name}</Text>
               <Text style={styles.itemDetails}>
-                {item.quantity} шт. × {item.product.price.toLocaleString('ru-RU')} ₽
+                {item.quantity} шт.
               </Text>
             </View>
           ))}
-          <View style={styles.totalRow}>
-            <Text style={styles.totalText}>
-              Итого: {getTotalPrice().toLocaleString('ru-RU')} ₽
-            </Text>
-          </View>
         </View>
 
         <View style={commonStyles.card}>
@@ -111,6 +107,16 @@ export default function CheckoutScreen() {
             onChangeText={(text) => setContactInfo(prev => ({ ...prev, email: text }))}
             keyboardType="email-address"
             autoCapitalize="none"
+          />
+          
+          <TextInput
+            style={[commonStyles.input, styles.addressInput]}
+            placeholder="Адрес доставки *"
+            value={contactInfo.address}
+            onChangeText={(text) => setContactInfo(prev => ({ ...prev, address: text }))}
+            multiline
+            numberOfLines={3}
+            textAlignVertical="top"
           />
           
           <TextInput
@@ -178,14 +184,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.textLight,
   },
-  totalRow: {
-    paddingTop: 16,
-    alignItems: 'flex-end',
-  },
-  totalText: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: colors.primary,
+  addressInput: {
+    height: 80,
   },
   messageInput: {
     height: 100,
