@@ -74,27 +74,27 @@ const styles = StyleSheet.create({
   },
   addButton: {
     backgroundColor: colors.primary,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    width: '100%',
+    borderRadius: 25, // Made oval/rounded
+    paddingHorizontal: 12, // Reduced by ~30%
+    paddingVertical: 7,    // Reduced by ~30%
+    width: '70%',          // Reduced width by 30%
     alignItems: 'center',
   },
   addButtonText: {
     color: colors.background,
-    fontSize: 14,
+    fontSize: 12,          // Slightly smaller text
     fontWeight: '600',
   },
   outOfStockBadge: {
     backgroundColor: colors.grey,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    width: '100%',
+    borderRadius: 25,      // Made oval/rounded to match
+    paddingHorizontal: 12, // Reduced by ~30%
+    paddingVertical: 7,    // Reduced by ~30%
+    width: '70%',          // Reduced width by 30%
     alignItems: 'center',
   },
   outOfStockText: {
-    fontSize: 14,
+    fontSize: 12,          // Slightly smaller text
     color: colors.textLight,
     fontWeight: '500',
   },
