@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   logo: {
-    width: 975,  // Increased by 30% from 750 to 975
-    height: 390, // Increased by 30% from 300 to 390
+    width: 1950,  // Увеличено в 2.5 раза от 975 до 1950
+    height: 780,  // Увеличено в 2.5 раза от 390 до 780
     marginBottom: 30,
   },
 });

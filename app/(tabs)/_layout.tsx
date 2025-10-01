@@ -10,7 +10,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.textLight,
+        tabBarInactiveTintColor: colors.text,
         tabBarStyle: {
           backgroundColor: colors.background,
           borderTopColor: colors.grey,
@@ -36,6 +36,15 @@ export default function TabLayout() {
           title: 'Корзина',
           tabBarIcon: ({ color, size }) => (
             <CartTabIcon color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="news"
+        options={{
+          title: 'Новости',
+          tabBarIcon: ({ color, size }) => (
+            <IconSymbol name="newspaper" size={size} color={color} />
           ),
         }}
       />
