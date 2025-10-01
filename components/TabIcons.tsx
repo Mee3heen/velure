@@ -11,7 +11,7 @@ export function CatalogIcon({ color, size }: TabIconProps) {
   return (
     <View style={styles.iconContainer}>
       <Image 
-        source={require('@/assets/images/81236020-772d-4dfb-b108-62126bb225e2.png')}
+        source={require('@/assets/images/a8f36cdb-4f3b-4186-9b00-325245fd0100.png')}
         style={[styles.iconImage, { width: size, height: size, tintColor: color }]}
         resizeMode="contain"
       />
@@ -23,7 +23,7 @@ export function CartIcon({ color, size }: TabIconProps) {
   return (
     <View style={styles.iconContainer}>
       <Image 
-        source={require('@/assets/images/5eec5a13-87c6-46d8-8be2-ff80ce890d09.png')}
+        source={require('@/assets/images/81619a35-e477-438a-bf2e-63cbdc315529.png')}
         style={[styles.iconImage, { width: size, height: size, tintColor: color }]}
         resizeMode="contain"
       />
@@ -35,7 +35,7 @@ export function SeminarsIcon({ color, size }: TabIconProps) {
   return (
     <View style={styles.iconContainer}>
       <Image 
-        source={require('@/assets/images/c0223f93-0b3a-46d6-961c-8fb1f1623e94.png')}
+        source={require('@/assets/images/e52e13f6-fb42-47e2-a71b-b4d63d375c00.png')}
         style={[styles.iconImage, { width: size, height: size, tintColor: color }]}
         resizeMode="contain"
       />
@@ -47,7 +47,7 @@ export function AboutIcon({ color, size }: TabIconProps) {
   return (
     <View style={styles.iconContainer}>
       <Image 
-        source={require('@/assets/images/1ab0cb7b-a3d7-46f3-8158-acdbf3a58e57.png')}
+        source={require('@/assets/images/7af66a5d-be38-4770-b41e-74c63cdd58c2.png')}
         style={[styles.iconImage, { width: size, height: size, tintColor: color }]}
         resizeMode="contain"
       />
