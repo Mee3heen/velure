@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { colors } from '@/styles/commonStyles';
+import { View, Image, StyleSheet } from 'react-native';
 
 interface LogoProps {
   size?: 'small' | 'medium' | 'large';
@@ -12,10 +11,12 @@ export function Logo({ size = 'medium', style }: LogoProps) {
   const logoSize = size === 'small' ? styles.small : size === 'large' ? styles.large : styles.medium;
   
   return (
-    <View style={[styles.container, logoSize, style]}>
-      <Text style={[styles.text, logoSize]}>
-        VEL<Text style={styles.dot}>•</Text>URE
-      </Text>
+    <View style={[styles.container, style]}>
+      <Image 
+        source={require('@/assets/images/755a25bc-5de2-4e63-bfda-9a6b6ba3986f.jpeg')}
+        style={[styles.logo, logoSize]}
+        resizeMode="contain"
+      />
     </View>
   );
 }
@@ -26,21 +27,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 8,
   },
-  text: {
-    fontWeight: '900',
-    color: colors.text,
-    letterSpacing: 2,
-  },
-  dot: {
-    color: colors.primary,
+  logo: {
+    width: 120,
+    height: 40,
   },
   small: {
-    fontSize: 16,
+    width: 80,
+    height: 26,
   },
   medium: {
-    fontSize: 24,
+    width: 120,
+    height: 40,
   },
   large: {
-    fontSize: 32,
+    width: 160,
+    height: 53,
   },
 });
