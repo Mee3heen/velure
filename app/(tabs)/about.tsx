@@ -9,17 +9,17 @@ import { colors, commonStyles } from '@/styles/commonStyles';
 export default function AboutScreen() {
   const handleCall = () => {
     console.log('Opening phone dialer');
-    Linking.openURL('tel:+79001234567');
+    Linking.openURL('tel:+79163434536');
   };
 
   const handleEmail = () => {
     console.log('Opening email client');
-    Linking.openURL('mailto:info@velure.ru');
+    Linking.openURL('mailto:store@velure.pro');
   };
 
   const handleWebsite = () => {
     console.log('Opening website');
-    Linking.openURL('https://velure.ru');
+    Linking.openURL('https://velure.pro');
   };
 
   return (
@@ -48,10 +48,10 @@ export default function AboutScreen() {
         <View style={commonStyles.card}>
           <Text style={styles.sectionTitle}>Контактная информация</Text>
           <Text style={commonStyles.text}>
-            📍 Москва, ул. Красная Площадь, д. 1{'\n'}
-            📞 +7 (900) 123-45-67{'\n'}
-            📧 info@velure.ru{'\n'}
-            🌐 www.velure.ru
+            📍 Москва, ул. Водников, д. 2{'\n'}
+            📞 +7 916 343-45-36{'\n'}
+            📧 store@velure.pro{'\n'}
+            🌐 velure.pro
           </Text>
           
           <View style={styles.buttonContainer}>

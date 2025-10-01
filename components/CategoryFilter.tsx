@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ScrollView, Pressable, Text, StyleSheet } from 'react-native';
 import { colors } from '../styles/commonStyles';
 
@@ -14,11 +14,28 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   selectedCategory,
   onSelectCategory,
 }) => {
+  const scrollViewRef = useRef<ScrollView>(null);
+
+  useEffect(() => {
+    // Scroll to the selected category when it changes
+    const selectedIndex = categories.indexOf(selectedCategory);
+    if (selectedIndex > 0 && scrollViewRef.current) {
+      // Calculate approximate position - each button is roughly 100px wide
+      const scrollPosition = selectedIndex * 100;
+      scrollViewRef.current.scrollTo({ x: scrollPosition, animated: true });
+    }
+  }, [selectedCategory, categories]);
+
   return (
     <ScrollView
+      ref={scrollViewRef}
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.container}
+      maintainVisibleContentPosition={{
+        minIndexForVisible: 0,
+        autoscrollToTopThreshold: 10,
+      }}
     >
       {categories.map((category) => (
         <Pressable
@@ -49,7 +66,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    paddingVertical: 5, // Уменьшаем вертикальные отступы
+    paddingVertical: 5,
   },
   categoryButton: {
     backgroundColor: colors.backgroundAlt,
@@ -59,6 +76,7 @@ const styles = StyleSheet.create({
     marginRight: 12,
     borderWidth: 1,
     borderColor: colors.grey,
+    minWidth: 80, // Ensure consistent button width for scroll calculation
   },
   selectedCategory: {
     backgroundColor: colors.primary,
@@ -68,6 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
     color: colors.text,
+    textAlign: 'center',
   },
   selectedCategoryText: {
     color: colors.background,
