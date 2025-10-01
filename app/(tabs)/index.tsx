@@ -41,7 +41,7 @@ export default function CatalogScreen() {
   );
 
   return (
-    <SafeAreaView style={commonStyles.wrapper}>
+    <SafeAreaView style={[commonStyles.wrapper, styles.safeArea]}>
       <FlatList
         data={filteredProducts}
         renderItem={renderProduct}
@@ -56,18 +56,24 @@ export default function CatalogScreen() {
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    paddingTop: 0, // Убираем отступ сверху
+  },
   container: {
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingBottom: 10,
+    paddingTop: 0, // Убираем отступ сверху контейнера
   },
   header: {
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: 20, // Уменьшаем отступ снизу
     paddingHorizontal: 10,
+    paddingTop: 10, // Минимальный отступ сверху только для логотипа
   },
   logo: {
     width: '80%',  // 80% ширины экрана, оставляя 10% с каждой стороны
     height: undefined,
     aspectRatio: 2.5, // Соотношение сторон логотипа
-    marginBottom: 30,
+    marginBottom: 15, // Уменьшаем отступ между логотипом и категориями
   },
 });
