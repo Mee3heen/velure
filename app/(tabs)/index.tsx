@@ -65,8 +65,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   logo: {
-    width: 1950,  // Увеличено в 2.5 раза от 975 до 1950
-    height: 780,  // Увеличено в 2.5 раза от 390 до 780
+    width: '80%',  // 80% ширины экрана, оставляя 10% с каждой стороны
+    height: undefined,
+    aspectRatio: 2.5, // Соотношение сторон логотипа
     marginBottom: 30,
   },
 });

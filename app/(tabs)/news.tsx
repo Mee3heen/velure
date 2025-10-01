@@ -18,52 +18,63 @@ interface NewsItem {
 const newsAndSeminars: NewsItem[] = [
   {
     id: '1',
-    title: 'Новые поступления препаратов Biogel',
+    title: 'Новые поступления препаратов Alchemy World',
     date: '15 января 2024',
-    description: 'В наш ассортимент поступили новые препараты линейки Biogel для контурной пластики и биоревитализации.',
+    description: 'В наш ассортимент поступили новые препараты линейки Alchemy World Premium для контурной пластики и биоревитализации. Высокое качество и инновационные формулы.',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop',
     type: 'news',
   },
   {
     id: '2',
-    title: 'Семинар по применению филлеров AGT',
+    title: 'Семинар по применению филлеров Elia Grazia',
     date: '20 января 2024',
-    description: 'Приглашаем на обучающий семинар по правильному применению филлеров AGT. Ведущий специалист расскажет о техниках введения.',
+    description: 'Приглашаем на обучающий семинар по правильному применению филлеров Elia Grazia. Ведущий специалист расскажет о техниках введения и особенностях работы с препаратами.',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=200&fit=crop',
     type: 'seminar',
-    link: 'https://example.com/seminar-agt',
+    link: 'https://example.com/seminar-elia-grazia',
   },
   {
     id: '3',
     title: 'Обновление линейки Jufora',
     date: '25 января 2024',
-    description: 'Компания Jufora представила обновленную линейку препаратов с улучшенной формулой.',
+    description: 'Компания Jufora представила обновленную линейку препаратов с улучшенной формулой. Новые биоревитализанты и коллагеностимуляторы уже доступны для заказа.',
     image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=200&fit=crop',
     type: 'news',
   },
   {
     id: '4',
-    title: 'Мастер-класс по биоревитализации',
+    title: 'Мастер-класс по полинуклеотидам',
     date: '30 января 2024',
-    description: 'Практический мастер-класс по современным методам биоревитализации. Работа с препаратами нового поколения.',
+    description: 'Практический мастер-класс по современным методам применения полинуклеотидов. Работа с препаратами Elia Grazia нового поколения для глубокой регенерации.',
     image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=200&fit=crop',
     type: 'seminar',
-    link: 'https://example.com/masterclass-biorevitalization',
+    link: 'https://example.com/masterclass-polynucleotides',
   },
   {
     id: '5',
-    title: 'Расширение географии поставок',
+    title: 'Расширение ассортимента пилингов',
     date: '5 февраля 2024',
-    description: 'Мы расширили географию наших поставок. Теперь доставляем препараты в новые регионы России и страны СНГ.',
+    description: 'Мы расширили ассортимент профессиональных пилингов Elia Grazia. Теперь доступны новые формулы для различных типов кожи и решения специфических проблем.',
     image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=200&fit=crop',
     type: 'news',
+  },
+  {
+    id: '6',
+    title: 'Семинар по коллагеностимуляторам',
+    date: '10 февраля 2024',
+    description: 'Углубленное изучение механизмов действия коллагеностимуляторов. Практические навыки работы с препаратами различных производителей.',
+    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop',
+    type: 'seminar',
+    link: 'https://example.com/seminar-collagen-stimulators',
   },
 ];
 
 export default function NewsScreen() {
   const handleLinkPress = (link?: string) => {
     if (link) {
-      Linking.openURL(link);
+      Linking.openURL(link).catch(err => {
+        console.log('Error opening link:', err);
+      });
     }
   };
 
@@ -73,7 +84,7 @@ export default function NewsScreen() {
       <View style={styles.newsContent}>
         <View style={styles.newsHeader}>
           <View style={[styles.typeTag, item.type === 'seminar' ? styles.seminarTag : styles.newsTag]}>
-            <Text style={styles.typeText}>
+            <Text style={[styles.typeText, item.type === 'seminar' && styles.seminarTypeText]}>
               {item.type === 'seminar' ? 'СЕМИНАР' : 'НОВОСТИ'}
             </Text>
           </View>
@@ -187,6 +198,9 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: 'bold',
     color: colors.primary,
+  },
+  seminarTypeText: {
+    color: '#4CAF50',
   },
   newsDate: {
     fontSize: 12,
