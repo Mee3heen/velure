@@ -4,6 +4,7 @@ import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProductCard } from '@/components/ProductCard';
 import { CategoryFilter } from '@/components/CategoryFilter';
+import { Logo } from '@/components/Logo';
 import { useCartContext } from '@/contexts/CartContext';
 import { products, categories } from '@/data/products';
 import { colors, commonStyles } from '@/styles/commonStyles';
@@ -26,6 +27,7 @@ export default function CatalogScreen() {
 
   const renderHeader = () => (
     <View style={styles.header}>
+      <Logo size="medium" style={styles.logo} />
       <CategoryFilter
         categories={categories}
         selectedCategory={selectedCategory}
@@ -62,5 +64,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingTop: 10,
     marginBottom: 20,
+  },
+  logo: {
+    marginBottom: 20,
+    paddingVertical: 16,
   },
 });

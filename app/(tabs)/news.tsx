@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, Pressable, Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { colors, commonStyles } from '@/styles/commonStyles';
+import { Logo } from '@/components/Logo';
 import { Button } from '@/components/button';
 
 interface NewsItem {
@@ -109,6 +110,8 @@ export default function NewsScreen() {
   return (
     <SafeAreaView style={commonStyles.wrapper}>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <Logo size="medium" style={styles.logo} />
+        
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Новости и семинары</Text>
           <Text style={styles.headerSubtitle}>
@@ -142,6 +145,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
+  logo: {
+    paddingVertical: 16,
+    marginBottom: 10,
+  },
   header: {
     padding: 20,
     alignItems: 'center',
@@ -163,11 +170,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   newsItem: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.card,
     borderRadius: 12,
     marginBottom: 20,
     overflow: 'hidden',
-    ...commonStyles.shadow,
+    boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+    elevation: 3,
   },
   newsImage: {
     width: '100%',

@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '@/components/button';
+import { Logo } from '@/components/Logo';
 import { colors, commonStyles } from '@/styles/commonStyles';
 
 export default function AboutScreen() {
@@ -24,6 +25,7 @@ export default function AboutScreen() {
   return (
     <SafeAreaView style={commonStyles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
+        <Logo size="medium" style={styles.logo} />
         <Text style={commonStyles.title}>О компании</Text>
         
         <View style={commonStyles.card}>
@@ -81,6 +83,10 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+  },
+  logo: {
+    paddingVertical: 16,
+    marginBottom: 10,
   },
   sectionTitle: {
     fontSize: 18,

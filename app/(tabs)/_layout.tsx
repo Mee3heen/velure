@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { IconSymbol } from '@/components/IconSymbol';
+import { CatalogIcon, CartIcon, SeminarsIcon, AboutIcon } from '@/components/TabIcons';
 import { CartTabIcon } from '@/components/CartTabIcon';
 import { colors } from '@/styles/commonStyles';
 
@@ -14,11 +14,15 @@ export default function TabLayout() {
         tabBarStyle: {
           backgroundColor: colors.background,
           borderTopColor: colors.grey,
+          paddingBottom: 8,
+          paddingTop: 8,
+          height: 70,
         },
         headerStyle: {
           backgroundColor: colors.background,
         },
         headerTintColor: colors.text,
+        headerShown: false, // Hide default header since we'll add logo to each screen
       }}
     >
       <Tabs.Screen
@@ -26,7 +30,7 @@ export default function TabLayout() {
         options={{
           title: 'Каталог',
           tabBarIcon: ({ color, size }) => (
-            <IconSymbol name="square.grid.2x2" size={size} color={color} />
+            <CatalogIcon color={color} size={size} />
           ),
         }}
       />
@@ -42,18 +46,18 @@ export default function TabLayout() {
       <Tabs.Screen
         name="news"
         options={{
-          title: 'Новости и семинары',
+          title: 'Семинары',
           tabBarIcon: ({ color, size }) => (
-            <IconSymbol name="newspaper" size={size} color={color} />
+            <SeminarsIcon color={color} size={size} />
           ),
         }}
       />
       <Tabs.Screen
         name="about"
         options={{
-          title: 'О компании',
+          title: 'О нас',
           tabBarIcon: ({ color, size }) => (
-            <IconSymbol name="info.circle" size={size} color={color} />
+            <AboutIcon color={color} size={size} />
           ),
         }}
       />

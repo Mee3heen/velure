@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { CartItem } from '@/components/CartItem';
 import { Button } from '@/components/button';
+import { Logo } from '@/components/Logo';
 import { useCartContext } from '@/contexts/CartContext';
 import { colors, commonStyles } from '@/styles/commonStyles';
 import { CartItem as CartItemType } from '@/types/Product';
@@ -63,6 +64,7 @@ export default function CartScreen() {
   return (
     <SafeAreaView style={commonStyles.wrapper}>
       <View style={commonStyles.container}>
+        <Logo size="medium" style={styles.logo} />
         <Text style={commonStyles.title}>Корзина</Text>
         
         {cartItems.length === 0 ? (
@@ -84,6 +86,10 @@ export default function CartScreen() {
 }
 
 const styles = StyleSheet.create({
+  logo: {
+    paddingVertical: 16,
+    marginBottom: 10,
+  },
   listContainer: {
     padding: 20,
   },
