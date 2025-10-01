@@ -2,7 +2,6 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { CatalogIcon, CartIcon, SeminarsIcon, AboutIcon } from '@/components/TabIcons';
-import { CartTabIcon } from '@/components/CartTabIcon';
 import { colors } from '@/styles/commonStyles';
 
 export default function TabLayout() {
@@ -39,7 +38,7 @@ export default function TabLayout() {
         options={{
           title: 'Корзина',
           tabBarIcon: ({ color, size }) => (
-            <CartTabIcon color={color} size={size} />
+            <CartIcon color={color} size={size} />
           ),
         }}
       />
