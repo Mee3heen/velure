@@ -1,0 +1,87 @@
+
+import { Product } from '../types/Product';
+
+export const products: Product[] = [
+  {
+    id: '1',
+    name: 'Сыворотка с гиалуроновой кислотой',
+    description: 'Интенсивное увлажнение и восстановление кожи. Подходит для всех типов кожи.',
+    price: 2500,
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop',
+    category: 'Сыворотки',
+    inStock: true,
+  },
+  {
+    id: '2',
+    name: 'Крем с ретинолом',
+    description: 'Антивозрастной крем для ночного ухода. Стимулирует обновление клеток.',
+    price: 3200,
+    image: 'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&h=400&fit=crop',
+    category: 'Кремы',
+    inStock: true,
+  },
+  {
+    id: '3',
+    name: 'Витамин С сыворотка',
+    description: 'Осветляющая сыворотка с антиоксидантами. Защищает от свободных радикалов.',
+    price: 2800,
+    image: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop',
+    category: 'Сыворотки',
+    inStock: true,
+  },
+  {
+    id: '4',
+    name: 'Очищающий гель',
+    description: 'Мягкое очищение для чувствительной кожи. Не пересушивает.',
+    price: 1800,
+    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop',
+    category: 'Очищение',
+    inStock: true,
+  },
+  {
+    id: '5',
+    name: 'Пептидный крем',
+    description: 'Восстанавливающий крем с пептидами. Повышает упругость кожи.',
+    price: 4200,
+    image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=400&fit=crop',
+    category: 'Кремы',
+    inStock: true,
+  },
+  {
+    id: '6',
+    name: 'Тоник с кислотами',
+    description: 'Отшелушивающий тоник для проблемной кожи. Сужает поры.',
+    price: 2200,
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop',
+    category: 'Тоники',
+    inStock: false,
+  },
+  {
+    id: '7',
+    name: 'Солнцезащитный крем SPF 50',
+    description: 'Надежная защита от UV-лучей. Подходит для ежедневного использования.',
+    price: 2600,
+    image: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=400&fit=crop',
+    category: 'Защита',
+    inStock: true,
+  },
+  {
+    id: '8',
+    name: 'Маска с глиной',
+    description: 'Очищающая маска для жирной кожи. Матирует и сужает поры.',
+    price: 1900,
+    image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=400&fit=crop',
+    category: 'Маски',
+    inStock: true,
+  },
+];
+
+export const categories = [
+  'Все',
+  'Сыворотки',
+  'Кремы',
+  'Очищение',
+  'Тоники',
+  'Защита',
+  'Маски',
+];
