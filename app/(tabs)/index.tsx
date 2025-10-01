@@ -4,7 +4,6 @@ import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProductCard } from '@/components/ProductCard';
 import { CategoryFilter } from '@/components/CategoryFilter';
-import { ExclusiveOffersCarousel } from '@/components/ExclusiveOffersCarousel';
 import { useCartContext } from '@/contexts/CartContext';
 import { products, categories } from '@/data/products';
 import { colors, commonStyles } from '@/styles/commonStyles';
@@ -32,8 +31,6 @@ export default function CatalogScreen() {
         style={styles.logo}
         resizeMode="contain"
       />
-      
-      <ExclusiveOffersCarousel />
       
       <CategoryFilter
         categories={categories}
@@ -68,8 +65,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   logo: {
-    width: 750,  // Increased from 300 to 750 (2.5x larger)
-    height: 300, // Increased from 120 to 300 (2.5x larger)
+    width: 975,  // Increased by 30% from 750 to 975
+    height: 390, // Increased by 30% from 300 to 390
     marginBottom: 30,
   },
 });
